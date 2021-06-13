@@ -1,0 +1,35 @@
+@import 'variables';
+
+.footer {
+  min-height: 100px;
+  color: white;
+  background-color: #393636;
+  display: flex;
+
+  @media(max-width: $breakpoint-tablet) {
+    min-height: 200px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media(max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+
+  &__contact-items-wrapper {
+    text-align: left;
+
+    @media(max-width: $breakpoint-tablet) {
+      text-align: center;
+    }
+  }
+
+  &__contact-item {
+    margin: 4px 0;
+  }
+}

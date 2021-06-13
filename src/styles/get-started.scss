@@ -1,0 +1,68 @@
+@import 'variables';
+
+.get-started {
+  margin: 24px auto 48px auto;
+
+  &__timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px 0 64px;
+  }
+
+  &__timeline-item {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__timeline-number-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #dddddd;
+    }
+  }
+
+  &__timeline-number {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 10px;
+    background-color: #5dbafc;
+    color: #ffffff;
+  }
+
+  &__timeline-title {
+    color: $color-slay;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  &__timeline-description {
+    color: $color-lightgray;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    width: 80%;
+  }
+}

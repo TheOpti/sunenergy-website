@@ -1,0 +1,65 @@
+@import 'variables';
+
+.navigation {
+  &__first-row {
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 230px;
+    height: 130px;
+    background: url('../assets/images/logo.png') center center no-repeat;
+    background-size: contain;
+  }
+
+  &__icon {
+    font-size: 30px;
+  }
+
+  &__address-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__telephone-item {
+    margin-left: 24px;
+  }
+
+  &__address-entry {
+    margin-left: 12px;
+    font-size: 18px;
+  }
+
+  &__telephone-entry {
+    margin-left: 12px;
+    font-size: 22px;
+  }
+
+  &__address {
+    display: flex;
+  }
+
+  &__second-row {
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__menu-item {
+    margin: 0 12px;
+    padding: 0 12px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

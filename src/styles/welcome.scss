@@ -1,0 +1,13 @@
+@import 'variables';
+
+.welcome {
+  min-height: 600px;
+  display: flex;
+
+  &__slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
