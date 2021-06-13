@@ -3,11 +3,43 @@
 .welcome {
   min-height: 600px;
   display: flex;
+  margin-bottom: 32px;
 
   &__slider {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  &__slide {
+    height: 600px;
+    display: flex;
+    align-items: center;
+
+    &.first {
+      background: url('../assets/images/slide-1.png') center center no-repeat;
+      background-size: cover;
+    }
+
+    &.second {
+      background: url('../assets/images/slide-2.png') center center no-repeat;
+      background-size: cover;
+    }
+
+    &.third {
+      background: url('../assets/images/slide-3.png') center center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__slide-title {
+    font-size: 60px;
+    margin: auto;
+    max-width: 620px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s;
   }
 }

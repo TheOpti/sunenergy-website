@@ -12,49 +12,117 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a4b32269cc.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 </head>
 <body>
-  <nav class="navigation container" id="nav-bar">
-    <div class="navigation__first-row">
-      <div class="navigation__logo"></div>
-      <div class="navigation__address">
-        <div class="navigation__address-item">
-          <i class="color-blue navigation__icon fa fa-map-marker"></i>
-          <div class="navigation__address-entry">
-            Fejkowa ulica 1 <br />
-            01-199 Ciasteczkowo
+  <nav class="navigation" id="nav-bar">
+    <div class="container">
+      <div class="navigation__first-row">
+        <div class="navigation__logo"></div>
+        <div class="navigation__address">
+          <div class="navigation__address-item">
+            <i class="color-blue navigation__icon fa fa-map-marker"></i>
+            <div class="navigation__address-entry">
+              Fejkowa ulica 1 <br />
+              01-199 Ciasteczkowo
+            </div>
           </div>
-        </div>
-        <div class="navigation__address-item">
-          <div class="navigation__address-entry">
-            Inna ulica 3 <br />
-            09-444 Czekolada
+          <div class="navigation__address-item">
+            <div class="navigation__address-entry">
+              Inna ulica 3 <br />
+              09-444 Czekolada
+            </div>
           </div>
-        </div>
-        <div class="navigation__address-item navigation__telephone-item">
-          <i class="color-green navigation__icon fa fa-phone"></i>
-          <div class="navigation__telephone-entry">
-            800 326 9054
+          <div class="navigation__address-item navigation__telephone-item">
+            <i class="color-green navigation__icon fa fa-phone"></i>
+            <div class="navigation__telephone-entry">
+              800 326 9054
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="navigation__second-row">
-      <div class="navigation__menu">
-        <div class="navigation__menu-item">Home</div>
-        <div class="navigation__menu-item">Firma</div>
-        <div class="navigation__menu-item">Projekty</div>
-        <div class="navigation__menu-item">Cennik</div>
-        <div class="navigation__menu-item">Kontakt</div>
+      <div class="navigation__second-row">
+        <div class="navigation__menu">
+          <div class="navigation__menu-item" data-section="home">Home</div>
+          <div class="navigation__menu-item" data-section="company">Firma</div>
+          <div class="navigation__menu-item" data-section="prices">Cennik</div>
+          <div class="navigation__menu-item" data-section="projects">Projekty</div>
+          <div class="navigation__menu-item" data-section="contact">Kontakt</div>
+        </div>
       </div>
     </div>
   </nav>
 
-  <section class="section welcome">
-    <div class="welcome__slider">slider</div>
+  <nav class="navigation navigation--sticky" id="nav-bar-sticky">
+    <div class="container">
+      <div class="navigation__first-row">
+        <div class="navigation__logo"></div>
+        <div class="navigation__address">
+          <div class="navigation__address-item">
+            <i class="color-blue navigation__icon fa fa-map-marker"></i>
+            <div class="navigation__address-entry">
+              Fejkowa ulica 1 <br />
+              01-199 Ciasteczkowo
+            </div>
+          </div>
+          <div class="navigation__address-item">
+            <div class="navigation__address-entry">
+              Inna ulica 3 <br />
+              09-444 Czekolada
+            </div>
+          </div>
+          <div class="navigation__address-item navigation__telephone-item">
+            <i class="color-green navigation__icon fa fa-phone"></i>
+            <div class="navigation__telephone-entry">
+              800 326 9054
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navigation__second-row">
+        <div class="navigation__menu">
+          <div class="navigation__menu-item" data-section="home">Home</div>
+          <div class="navigation__menu-item" data-section="company">Firma</div>
+          <div class="navigation__menu-item" data-section="prices">Cennik</div>
+          <div class="navigation__menu-item" data-section="projects">Projekty</div>
+          <div class="navigation__menu-item" data-section="contact">Kontakt</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section welcome" id="home">
+    <div class="welcome__slider splide" id="image-slider">
+      <div class="splide__track">
+        <div class="splide__list">
+          <div class="splide__slide">
+            <div class="welcome__slide first">
+              <div class="welcome__slide-title">
+                Lorem ipsum dolor sit amet
+              </div>
+            </div>
+          </div>
+          <div class="splide__slide">
+            <div class="welcome__slide second">
+              <div class="welcome__slide-title">
+                Another lorem ipsum text
+              </div>
+            </div>
+          </div>
+          <div class="splide__slide">
+            <div class="welcome__slide third">
+              <div class="welcome__slide-title">
+                More Lorem Ipsum on Another Slider text
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section class="about-company container">
+  <section class="about-company container" id="company">
     <div class="about-company__description">
       <div class="separator-line">
         <div class="separator"></div>
@@ -108,7 +176,7 @@
     </div>
   </section>
 
-  <section class="pricing container">
+  <section class="pricing container" id="prices">
     <div class="separator-line">
       <div class="headline ml12 color-gray">PRICING PLANS</div>
     </div>
@@ -199,7 +267,7 @@
     </div>
   </section>
 
-  <section class="our-projects container">
+  <section class="our-projects container" id="projects">
     <div class="separator-line">
       <div class="separator"></div>
       <div class="headline ml12 color-slay">WHAT WE DO</div>
@@ -233,7 +301,7 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="contact__content">
       <div class="contact__left">
         <div class="contact__form-wrapper">

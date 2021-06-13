@@ -1,6 +1,25 @@
 @import 'variables';
 
 .navigation {
+  &--sticky {
+    background-color: white;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.4s;
+  }
+
+  &--theme-fixed {
+    transform: translateY(-100%);
+  }
+
+  &--theme-fixed-on {
+    transform: translateY(0);
+    box-shadow: 1px 0 10px rgba(black, 0.3);
+  }
+
   &__first-row {
     height: 130px;
     display: flex;
@@ -43,7 +62,7 @@
   }
 
   &__second-row {
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
   }
