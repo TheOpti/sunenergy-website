@@ -6,16 +6,16 @@
   grid-gap: 10px;
 
   @media(max-width: $breakpoint-tablet) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-  }
-
-  @media(max-width: $breakpoint-mobile) {
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
   }
 
   &__description {
     grid-column: 1 / 7;
+
+    @media(max-width: $breakpoint-mobile) {
+      grid-column: 1;
+    }
   }
 
   &__image {
@@ -23,12 +23,22 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    @media(max-width: $breakpoint-tablet) {
+      justify-content: center;
+      grid-column: 1;
+    }
   }
 
   &__image-content {
     background: url('../assets/images/about-company.png') center no-repeat;
     background-size: contain;
     height: 480px;
-    width: 500px;
+    width: 80%;
+
+    @media(max-width: $breakpoint-tablet) {
+      height: 380px;
+      margin: 0 auto;
+    }
   }
 }

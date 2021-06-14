@@ -1,6 +1,8 @@
 @import 'variables';
 
 .navigation {
+  position: relative;
+
   &--sticky {
     background-color: white;
     z-index: 100;
@@ -9,6 +11,10 @@
     left: 0;
     right: 0;
     transition: all 0.4s;
+
+    @media(max-width: $breakpoint-tablet) {
+      display: none;
+    }
   }
 
   &--theme-fixed {
@@ -25,6 +31,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width: $breakpoint-tablet) {
+      justify-content: center;
+    }
   }
 
   &__logo {
@@ -41,6 +51,11 @@
   &__address-item {
     display: flex;
     align-items: center;
+    margin-left: 12px;
+
+    @media(max-width: $breakpoint-tablet) {
+      display: none;
+    }
   }
 
   &__telephone-item {
@@ -62,13 +77,80 @@
   }
 
   &__second-row {
-    height: 70px;
+    min-height: 70px;
     display: flex;
     align-items: center;
+
+    @media(max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__second-row-headline {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+
+    @media(max-width: $breakpoint-tablet) {
+      display: flex;
+    }
   }
 
   &__menu {
     display: flex;
+
+    @media(max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  &__menu-mobile {
+    @media(max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      width: 100%;
+      overflow: hidden;
+      transition: height 0.4s;
+      height: 300px;
+
+      &--hidden {
+        height: 0;
+      }
+
+      .navigation__menu-item {
+        width: 100%;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        margin: 12px 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__rwd-menu-icon {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+
+    @media(max-width: $breakpoint-tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__rwd-telephone {
+    display: none;
+
+    @media(max-width: $breakpoint-tablet) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__menu-item {

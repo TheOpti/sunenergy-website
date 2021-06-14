@@ -21,7 +21,7 @@ html, body {
   }
 
   @media(min-width: $breakpoint-tablet) {
-    max-width: 720px;
+    max-width: 840px;
   }
 
   @media(min-width: $breakpoint-desktop) {
@@ -30,6 +30,18 @@ html, body {
 
   @media(min-width: $breakpoint-large-desktop) {
     max-width: 1200px;
+  }
+}
+
+section.container {
+  margin: 32px auto;
+
+  @media(max-width: $breakpoint-desktop) {
+    margin: 24px auto;
+  }
+
+  @media(max-width: $breakpoint-tablet) {
+    margin: 16px auto;
   }
 }
 

@@ -10,45 +10,45 @@ require('./styles/pricing.scss');
 require('./styles/welcome.scss');
 require('./styles/what-we-offer.scss');
 
-const NAVBAR_HEIGHT = 210;
+const NAVBAR_HEIGHT = 200;
 
 document.addEventListener('DOMContentLoaded', () => {
   const navBar = document.querySelector('#nav-bar');
   const navBarSticky = document.querySelector('#nav-bar-sticky');
-  let sections, offsets;
+  const mobileMenuToggleBtn = document.querySelector('#menu-toggle-btn');
+  const mobileMenu = document.querySelector('.navigation__menu-mobile');
 
   setTimeout(() => {
-    sections = [...document.querySelectorAll('section[id]')];
-    offsets = sections.map((elem) => elem.offsetTop);
-
     init();
   }, 100);
-
-  const navigationMenuBtns = [
-    ...document.querySelectorAll('.navigation__menu-item'),
-  ];
 
   function init() {
     navBarSticky.classList.add('navigation--theme-fixed');
 
+    document.addEventListener('scroll', changeNavBar);
     navBar.addEventListener('click', handleNavbarClick);
     navBarSticky.addEventListener('click', handleNavbarClick);
 
-    document.addEventListener('scroll', changeNavBar);
-    window.addEventListener('scroll', throttle(handleScrollMovement, 275));
+    mobileMenuToggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('navigation__menu-mobile--hidden');
+    });
 
     changeNavBar();
   }
 
   function handleNavbarClick(event) {
     if (event.target.classList.contains('navigation__menu-item')) {
-      const elementToScroll = document.querySelector(
-        `#${event.target.dataset.section}`
-      );
+      const isMobile = window.innerWidth < 768;
+
+      const elementToScroll = document.querySelector(`#${event.target.dataset.section}`);
       const elemOffset = elementToScroll.offsetTop;
 
+      console.log(`Section ${event.target.dataset.section}, offsetTop: `, elemOffset);
+
+      const diff = isMobile ? 20 : NAVBAR_HEIGHT + 20;
+
       window.scroll({
-        top: elemOffset - NAVBAR_HEIGHT,
+        top: elemOffset - diff,
         behavior: 'smooth',
       });
     }
@@ -64,42 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function handleScrollMovement() {
-    const scrollPosition = window.scrollY;
-
-    const matchingOffset = offsets
-      .slice()
-      .reverse()
-      .find((offset) => scrollPosition > offset - 300);
-
-    const matchingOffsetIdx = offsets.findIndex(
-      (offset) => offset === matchingOffset
-    );
-
-    offsets.forEach((_, idx) => {
-      if (matchingOffsetIdx === idx) {
-        navigationMenuBtns[idx].classList.add('navigation__menu-item--active');
-      } else {
-        navigationMenuBtns[idx].classList.remove(
-          'navigation__menu-item--active'
-        );
-      }
-    });
-  }
-
-  function throttle(func, wait) {
-    let inThrottle;
-
-    return (...args) => {
-      const context = this;
-      if (!inThrottle) {
-        func.apply(context, ...args);
-        inThrottle = true;
-        setTimeout(() => (inThrottle = false), wait);
-      }
-    };
-  }
-
   // Slider installation and config
   new Splide( '#image-slider', {
     rewind: true,
@@ -107,5 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     cover: true,
     arrows: true,
     height: 600,
+    breakpoints: {
+      768: {
+        height: 400,
+      },
+      992: {
+        height: 500,
+      },
+    }
   }).mount();
 });
