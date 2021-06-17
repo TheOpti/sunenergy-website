@@ -8,7 +8,7 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 800px;
+    min-height: 800px;
 
     @media(max-width: $breakpoint-desktop) {
       grid-template-columns: repeat(1, 1fr);
@@ -23,6 +23,18 @@
     align-items: center;
     padding: 64px;
     grid-column: 1;
+
+    @media(max-width: $breakpoint-desktop) {
+      padding: 48px;
+    }
+
+    @media(max-width: $breakpoint-tablet) {
+      padding: 32px;
+    }
+
+    @media(max-width: $breakpoint-mobile) {
+      padding: 24px 12px;
+    }
   }
 
   &__right {
@@ -39,6 +51,18 @@
       padding: 48px;
       justify-content: center;
     }
+
+    @media(max-width: $breakpoint-desktop) {
+      padding: 48px;
+    }
+
+    @media(max-width: $breakpoint-tablet) {
+      padding: 32px;
+    }
+
+    @media(max-width: $breakpoint-mobile) {
+      padding: 24px 12px;
+    }
   }
 
   &__form-wrapper {
@@ -52,7 +76,11 @@
     }
 
     @media(max-width: $breakpoint-desktop) {
-      margin: 0 auto 0 auto ;
+      margin: 0 auto 0 auto;
+    }
+
+    @media(max-width: $breakpoint-tablet) {
+      max-width: 100%;
     }
   }
 
@@ -97,6 +125,10 @@
 
   &__button-wrapper {
     margin-top: 48px;
+
+    @media(max-width: $breakpoint-tablet) {
+      margin: 24px auto 0;
+    }
   }
 
   &__button {
@@ -135,6 +167,10 @@
   &__call-headline {
     font-size: 16px;
     color: $color-gray;
+
+    @media(max-width: $breakpoint-tablet) {
+      margin-bottom: 12px;
+    }
   }
 
   &__call-title {
@@ -156,5 +192,13 @@
     color: $color-blue;
     font-size: 60px;
     line-height: 110%;
+
+    @media(max-width: $breakpoint-desktop) {
+      font-size: 48px;
+    }
+
+    @media(max-width: $breakpoint-tablet) {
+      font-size: 32px;
+    }
   }
 }
