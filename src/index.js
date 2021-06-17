@@ -4,6 +4,7 @@ require('./styles/about-company.scss');
 require('./styles/contact.scss');
 require('./styles/footer.scss');
 require('./styles/get-started.scss');
+require('./styles/maps.scss');
 require('./styles/nav.scss');
 require('./styles/our-projects.scss');
 require('./styles/pricing.scss');
