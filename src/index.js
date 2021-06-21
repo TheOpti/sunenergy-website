@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     init();
     initMap();
-  }, 150);
+  }, 100);
 
   function init() {
     navBarSticky.classList.add('navigation--theme-fixed');

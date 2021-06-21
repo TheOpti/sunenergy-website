@@ -69,13 +69,12 @@
 
   &__reasons-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 32px;
     grid-row-gap: 32px;
     margin: 40px 0;
 
     @media(max-width: $breakpoint-tablet) {
-      grid-template-columns: repeat(1, 1fr);
       grid-column-gap: 0;
       grid-row-gap: 24px;
     }
@@ -95,15 +94,15 @@
   }
 
   &__reasons-title {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 20px;
+    line-height: 26px;
     margin-bottom: 12px;
     font-weight: 600;
     padding-left: 32px;
   }
 
   &__reasons-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
   }
 }

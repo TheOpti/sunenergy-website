@@ -123,6 +123,16 @@ p.narrow {
   }
 }
 
+.list {
+  color: $color-lightgray;
+  padding-left: 28px;
+}
+
+.list-elem {
+  font-size: 16px;
+  line-height: 30px;
+}
+
 .ml12 {
   margin-left: 12px;
 }

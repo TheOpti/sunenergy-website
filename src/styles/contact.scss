@@ -180,17 +180,17 @@
   }
 
   &__call-logo {
-    background: url('../assets/images/logo-only.png') center center no-repeat;
+    background: url('../assets/images/logo.png') center center no-repeat;
     background-size: contain;
 
-    height: 80px;
-    width: 80px;
+    height: 160px;
+    width: 290px;
     margin: 24px auto;
   }
 
   &__call-number {
     color: $color-blue;
-    font-size: 60px;
+    font-size: 48px;
     line-height: 110%;
 
     @media(max-width: $breakpoint-desktop) {
