@@ -1,0 +1,109 @@
+@import 'variables';
+
+.choose-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: white;
+
+  .separator {
+    border-top: 1px solid white !important;
+  }
+
+  @media(max-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__left {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 1;
+
+    background: url('../assets/images/winds.jpeg') center center no-repeat;
+    background-size: cover;
+
+    @media(max-width: $breakpoint-desktop) {
+      display: none;
+    }
+  }
+
+  &__right {
+    background: #5bafeb url('../assets/images/contact-left.png') center center no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 64px;
+
+    @media(max-width: $breakpoint-desktop) {
+      grid-column: 1;
+      padding: 24px 0;
+    }
+
+    @media(max-width: $breakpoint-tablet) {
+      padding: 12px 0;
+    }
+  }
+
+  &__right-content {
+    max-width: 650px;
+
+    @media(max-width: $breakpoint-desktop) {
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    @media(min-width: $breakpoint-mobile) {
+      max-width: 540px;
+    }
+
+    @media(min-width: $breakpoint-tablet) {
+      max-width: 840px;
+    }
+
+    @media(min-width: $breakpoint-desktop) {
+      max-width: 960px;
+    }
+  }
+
+  &__reasons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    margin: 40px 0;
+
+    @media(max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 24px;
+    }
+  }
+
+  &__reason {
+    position: relative;
+  }
+
+  &__reason-number {
+    position: absolute;
+    font-size: 42px;
+    font-weight: 600;
+    opacity: 0.3;
+    top: -14px;
+    left: -10px;
+  }
+
+  &__reasons-title {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    padding-left: 32px;
+  }
+
+  &__reasons-description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

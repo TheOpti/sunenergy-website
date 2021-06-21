@@ -1,6 +1,7 @@
 require('normalize.css/normalize.css');
 require('./styles/index.scss');
 require('./styles/about-company.scss');
+require('./styles/choose-us.scss');
 require('./styles/contact.scss');
 require('./styles/footer.scss');
 require('./styles/get-started.scss');
