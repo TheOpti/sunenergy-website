@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     init();
-  }, 100);
+    initMap();
+  }, 150);
 
   function init() {
     navBarSticky.classList.add('navigation--theme-fixed');
@@ -43,9 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const elementToScroll = document.querySelector(`#${event.target.dataset.section}`);
       const elemOffset = elementToScroll.offsetTop;
-
-      console.log(`Section ${event.target.dataset.section}, offsetTop: `, elemOffset);
-
       const diff = isMobile ? 20 : NAVBAR_HEIGHT + 20;
 
       window.scroll({
@@ -81,4 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     }
   }).mount();
+
+  function initMap() {
+    const uluru = { lat: -25.344, lng: 131.036 };
+    const newYork = { lat: 40.43, lng: 73.5 };
+
+    const firstMap = new google.maps.Map(document.getElementById('map-first'), { zoom: 5, center: uluru });
+    const secondMap = new google.maps.Map(document.getElementById('map-second'), { zoom: 5, center: newYork });
+
+    new google.maps.Marker({ position: uluru, map: firstMap });
+    new google.maps.Marker({ position: newYork, map: secondMap });
+  }
 });
