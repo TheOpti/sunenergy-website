@@ -8,7 +8,6 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    min-height: 800px;
 
     @media(max-width: $breakpoint-desktop) {
       grid-template-columns: repeat(1, 1fr);
@@ -177,6 +176,14 @@
     color: $color-slay;
     font-size: 36px;
     line-height: 110%;
+
+    @media(max-width: $breakpoint-desktop) {
+      font-size: 28px;
+    }
+
+    @media(max-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
   }
 
   &__call-logo {
