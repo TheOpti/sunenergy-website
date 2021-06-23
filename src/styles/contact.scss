@@ -8,7 +8,7 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 800px;
+    min-height: 800px;
 
     @media(max-width: $breakpoint-desktop) {
       grid-template-columns: repeat(1, 1fr);
@@ -16,7 +16,7 @@
   }
 
   &__left {
-    background: #5bafeb url('../assets/images/contact-left.png') center center no-repeat;
+    background: #B4D8D8;
     background-size: cover;
     display: flex;
     justify-content: flex-end;
@@ -38,7 +38,7 @@
   }
 
   &__right {
-    background: #5bafeb url('../assets/images/contact-right.png') center center no-repeat;
+    background: #ffffff url('../assets/images/contact-right.png') center center no-repeat;
     background-size: cover;
     display: flex;
     justify-content: flex-start;
@@ -100,7 +100,7 @@
     line-height: 1.5;
     border-width: 1px;
     border-style: solid;
-    border-color: #f2f2f2;
+    border-color: #ffffff;
     border-radius: 2px;
     border-right: none;
     border-top: none;

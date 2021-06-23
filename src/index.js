@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }).mount();
 
   function initMap() {
-    const uluru = { lat: -25.344, lng: 131.036 };
-    const newYork = { lat: 40.43, lng: 73.5 };
+    const uluru = { lat: 52.20722, lng: 20.86833 };
+    const newYork = { lat: 51.72599, lng: 20.20336 };
 
-    const firstMap = new google.maps.Map(document.getElementById('map-first'), { zoom: 5, center: uluru });
-    const secondMap = new google.maps.Map(document.getElementById('map-second'), { zoom: 5, center: newYork });
+    const firstMap = new google.maps.Map(document.getElementById('map-first'), { zoom: 9, center: uluru });
+    const secondMap = new google.maps.Map(document.getElementById('map-second'), { zoom: 8, center: newYork });
 
     new google.maps.Marker({ position: uluru, map: firstMap });
     new google.maps.Marker({ position: newYork, map: secondMap });

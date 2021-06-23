@@ -1,7 +1,7 @@
 @import 'variables';
 
 .what-we-offer {
-  background-color: #f8fbff;
+  background-color: #E0EDED;
   margin-top: 24px;
 
   &__content {
@@ -44,15 +44,30 @@
   }
 
   &__icon-wrapper {
-    width: 150px;
-    height: 150px;
-    background-color: white;
+    width: 220px;
+    height: 220px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     box-shadow: -1px 0px 15px 1px rgba(0,0,0,0.2);
+
+    &.first {
+      background: url('../assets/images/fotovol2m.png') center no-repeat;
+    }
+
+    &.second {
+      background: url('../assets/images/p_automm.png') center no-repeat;
+    }
+
+    &.third {
+      background: url('../assets/images/p_zbiornikm.png') center no-repeat;
+    }
+
+    &.four {
+      background: url('../assets/images/p_pompam.png') center no-repeat;
+    }
 
     @media (max-width: $breakpoint-desktop) {
       width: 120px;
@@ -62,14 +77,14 @@
 
   &__offer-title {
     color: $color-slay;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 34px;
-    margin-bottom: 12px;
+    margin: 12px 0;
     text-align: center;
 
     @media(max-width: $breakpoint-tablet) {
-      font-size: 20px;
-      margin-bottom: 8px;
+      font-size: 22px;
+      margin: 8px 0;
     }
   }
 

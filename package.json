@@ -18,7 +18,8 @@
     "url": "https://github.com/TheOpti/sunenergy-website/issues"
   },
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "ws": "^7.5.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.1.0",

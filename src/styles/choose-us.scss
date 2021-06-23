@@ -3,10 +3,10 @@
 .choose-us {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  color: white;
+  color: $color-lightgray;
 
   .separator {
-    border-top: 1px solid white !important;
+    border-top: 1px solid $color-blue !important;
   }
 
   @media(max-width: $breakpoint-desktop) {
@@ -27,7 +27,7 @@
   }
 
   &__right {
-    background: #5bafeb url('../assets/images/contact-left.png') center center no-repeat;
+    background: #CBE3E3;
     background-size: cover;
     min-height: 600px;
     grid-column: 2;
@@ -47,6 +47,7 @@
   }
 
   &__right-content {
+    color: $color-lightgray;
     max-width: 650px;
 
     @media(max-width: $breakpoint-desktop) {
@@ -81,6 +82,7 @@
   }
 
   &__reason {
+    color: $color-lightgray;
     position: relative;
   }
 
