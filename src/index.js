@@ -7,7 +7,6 @@ require('./styles/footer.scss');
 require('./styles/get-started.scss');
 require('./styles/maps.scss');
 require('./styles/nav.scss');
-require('./styles/our-projects.scss');
 require('./styles/prices.scss');
 require('./styles/welcome.scss');
 require('./styles/what-we-offer.scss');
@@ -71,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cover: true,
     arrows: true,
     height: 600,
+    autoplay: true,
     breakpoints: {
       768: {
         height: 400,
@@ -82,13 +82,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }).mount();
 
   function initMap() {
-    const uluru = { lat: 52.20722, lng: 20.86833 };
-    const newYork = { lat: 51.72599, lng: 20.20336 };
+    const warsaw = { lat: 52.20722, lng: 20.86833 };
+    const chrusty = { lat: 51.72599, lng: 20.20336 };
 
-    const firstMap = new google.maps.Map(document.getElementById('map-first'), { zoom: 9, center: uluru });
-    const secondMap = new google.maps.Map(document.getElementById('map-second'), { zoom: 8, center: newYork });
+    const firstMap = new google.maps.Map(document.getElementById('map-first'), { zoom: 12, center: warsaw });
+    const secondMap = new google.maps.Map(document.getElementById('map-second'), { zoom: 12, center: chrusty });
 
-    new google.maps.Marker({ position: uluru, map: firstMap });
-    new google.maps.Marker({ position: newYork, map: secondMap });
+    const warsawInfowindow = new google.maps.InfoWindow({
+      content: `<div class="maps__marker">
+         <p>Konotopska 9/12</p>
+         <p>02-496 Warszawa</p>
+      </div>`,
+    });
+
+    const chrustyInfowindow = new google.maps.InfoWindow({
+      content: `<div class="maps__marker">
+         <p>Chrusty 66A</p>
+         <p>96-200 Rawa Mazowiecka</p>
+      </div>`,
+    });
+
+    const warsawMarker = new google.maps.Marker({
+      position: warsaw,
+      map: firstMap,
+      // icon: 'src/assets/images/map-marker.svg',
+    });
+
+    const chrustyMarker = new google.maps.Marker({
+      position: chrusty,
+      map: secondMap,
+      // icon: 'src/assets/images/map-marker.svg',
+    });
+
+    warsawInfowindow.open({
+      anchor: warsawMarker,
+      firstMap,
+      shouldFocus: false,
+    });
+
+    chrustyInfowindow.open({
+      anchor: chrustyMarker,
+      secondMap,
+      shouldFocus: false,
+    })
   }
 });

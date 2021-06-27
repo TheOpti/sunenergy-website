@@ -21,32 +21,35 @@
   }
 
   &__offers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 32px;
     grid-row-gap: 32px;
-    margin: 36px 0;
 
     @media(max-width: $breakpoint-desktop) {
-      grid-template-columns: repeat(1, 1fr);
       margin: 16px 0;
     }
   }
 
   &__offer-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin: 36px 0;
 
     @media (max-width: $breakpoint-desktop) {
-      margin: 12px 0;
+      margin: 24px 0;
+      flex-direction: column;
     }
   }
 
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   &__icon-wrapper {
-    width: 220px;
-    height: 220px;
-    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    margin-right: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,24 +57,29 @@
     box-shadow: -1px 0px 15px 1px rgba(0,0,0,0.2);
 
     &.first {
-      background: url('../assets/images/fotovol2m.png') center no-repeat;
+      background: url('../assets/images/what_we_offer_fotovol.svg') center center no-repeat;
+      background-size: 65%;
     }
 
     &.second {
-      background: url('../assets/images/p_automm.png') center no-repeat;
+      background: url('../assets/images/what_we_offer_zbiornikm.svg') center center no-repeat;
+      background-size: 65%;
     }
 
     &.third {
-      background: url('../assets/images/p_zbiornikm.png') center no-repeat;
+      background: url('../assets/images/what_we_offer_zbiornikm.svg') center center no-repeat;
+      background-size: 65%;
     }
 
     &.four {
-      background: url('../assets/images/p_pompam.png') center no-repeat;
+      background: url('../assets/images/what_we_offer_pompa.svg') center center no-repeat;
+      background-size: 65%;
     }
 
     @media (max-width: $breakpoint-desktop) {
       width: 120px;
       height: 120px;
+      margin-right: 0;
     }
   }
 
@@ -79,12 +87,15 @@
     color: $color-slay;
     font-size: 28px;
     line-height: 34px;
-    margin: 12px 0;
-    text-align: center;
+    margin: 16px 0;
+
+    @media(max-width: $breakpoint-desktop) {
+      text-align: center;
+    }
 
     @media(max-width: $breakpoint-tablet) {
       font-size: 22px;
-      margin: 8px 0;
+      margin: 12px 0;
     }
   }
 
@@ -92,10 +103,9 @@
     color: #777b93;
     font-size: 16px;
     line-height: 28px;
-    text-align: center;
 
     @media(max-width: $breakpoint-tablet) {
-      font-size: 14px;
+      text-align: center;
     }
   }
 }

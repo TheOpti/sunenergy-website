@@ -37,7 +37,8 @@
     width: 80%;
 
     @media(max-width: $breakpoint-tablet) {
-      height: 380px;
+      height: 300px;
+      width: 85%;
       margin: 0 auto;
     }
   }
