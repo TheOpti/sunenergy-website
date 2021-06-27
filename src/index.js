@@ -8,6 +8,7 @@ require('./styles/get-started.scss');
 require('./styles/maps.scss');
 require('./styles/nav.scss');
 require('./styles/our-projects.scss');
+require('./styles/prices.scss');
 require('./styles/welcome.scss');
 require('./styles/what-we-offer.scss');
 

@@ -2,7 +2,7 @@
 
 .contact {
   .separator {
-    border-top: 1px solid white !important;
+    border-top: 1px solid $color-slay !important;
   }
 
   &__content {
@@ -65,7 +65,7 @@
   }
 
   &__form-wrapper {
-    color: white;
+    color: $color-slay;
     margin-right: 32px;
     max-width: 75%;
 
@@ -99,27 +99,27 @@
     line-height: 1.5;
     border-width: 1px;
     border-style: solid;
-    border-color: #ffffff;
+    border-color: $color-slay;
     border-radius: 2px;
     border-right: none;
     border-top: none;
     border-left: none;
     box-sizing: border-box;
     -webkit-appearance: none;
-    color: white !important;
+    color: $color-slay !important;
   }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: white;
+    color: $color-slay;
   }
   ::-moz-placeholder { /* Firefox 19+ */
-    color: white;
+    color: $color-slay;
   }
   :-ms-input-placeholder { /* IE 10+ */
-    color: white;
+    color: $color-slay;
   }
   :-moz-placeholder { /* Firefox 18- */
-    color: white;
+    color: $color-slay;
   }
 
   &__button-wrapper {
@@ -131,7 +131,7 @@
   }
 
   &__button {
-    background: #ffffff;
+    background: transparent;
     color: $color-slay;
     transition: all 0.3s;
     cursor: pointer;
@@ -140,15 +140,15 @@
     height: 62px;
     letter-spacing: 0.8px;
     border-radius: 4px;
-    border: 1px solid transparent;
+    border: 1px solid $color-slay;
     text-align: center;
     padding: 20px 34px;
     outline: none;
     width: 200px;
 
     &:hover {
-      background: transparent;
-      border: 1px solid white;
+      background: $color-slay;
+      border: 1px solid $color-slay;
       color: white
     }
 
@@ -196,7 +196,7 @@
   }
 
   &__call-number {
-    color: $color-blue;
+    color: $color-green;
     font-size: 48px;
     line-height: 110%;
 
