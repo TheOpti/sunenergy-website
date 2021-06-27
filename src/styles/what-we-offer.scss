@@ -2,22 +2,13 @@
 
 .what-we-offer {
   background-color: #E0EDED;
-  margin-top: 24px;
 
   &__content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 48px;
-
-    @media(max-width: $breakpoint-desktop) {
-      padding: 36px;
-    }
-
-    @media(max-width: $breakpoint-tablet) {
-      padding: 12px;
-    }
+    padding: 24px;
   }
 
   &__offers {
@@ -25,17 +16,17 @@
     grid-row-gap: 32px;
 
     @media(max-width: $breakpoint-desktop) {
-      margin: 16px 0;
+      margin-top: 16px;
     }
   }
 
   &__offer-item {
     display: flex;
     align-items: center;
-    margin: 36px 0;
+    margin-top: 36px;
 
     @media (max-width: $breakpoint-desktop) {
-      margin: 24px 0;
+      margin-top: 24px;
       flex-direction: column;
     }
   }
@@ -49,7 +40,7 @@
   &__icon-wrapper {
     width: 200px;
     height: 200px;
-    margin-right: 32px;
+    margin-right: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,27 +49,31 @@
 
     &.first {
       background: url('../assets/images/what_we_offer_fotovol.svg') center center no-repeat;
+      background-color: white;
       background-size: 65%;
     }
 
     &.second {
-      background: url('../assets/images/what_we_offer_zbiornikm.svg') center center no-repeat;
+      background: url('../assets/images/what_we_offer_automm.svg') center center no-repeat;
+      background-color: white;
       background-size: 65%;
     }
 
     &.third {
       background: url('../assets/images/what_we_offer_zbiornikm.svg') center center no-repeat;
+      background-color: white;
       background-size: 65%;
     }
 
     &.four {
       background: url('../assets/images/what_we_offer_pompa.svg') center center no-repeat;
+      background-color: white;
       background-size: 65%;
     }
 
     @media (max-width: $breakpoint-desktop) {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       margin-right: 0;
     }
   }

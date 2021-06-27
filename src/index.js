@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navBarSticky = document.querySelector('#nav-bar-sticky');
   const mobileMenuToggleBtn = document.querySelector('#menu-toggle-btn');
   const mobileMenu = document.querySelector('.navigation__menu-mobile');
+  const formLoader = document.querySelector('.contact__loader-wrapper');
+  const submitFormBtn = document.querySelector('#submit-btn');
+  const loaderInfoBox = document.querySelector('.contact__info-box');
 
   setTimeout(() => {
     init();
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', changeNavBar);
     navBar.addEventListener('click', handleNavbarClick);
     navBarSticky.addEventListener('click', handleNavbarClick);
+    submitFormBtn.addEventListener('click', submitForm);
 
     mobileMenuToggleBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('navigation__menu-mobile--hidden');
@@ -61,6 +65,42 @@ document.addEventListener('DOMContentLoaded', () => {
       navBarSticky.classList.remove('navigation--theme-fixed-on');
       navBarSticky.classList.add('navigation--theme-fixed');
     }
+  }
+
+  function submitForm() {
+    const nameValue = document.querySelector('#name').value;
+    const emailValue = document.querySelector('#email').value;
+    const topicValue = document.querySelector('#subject').value;
+    const messageValue = document.querySelector('#message').value;
+
+    formLoader.classList.toggle('contact__loader-wrapper--active');
+
+    console.log('PRZED WYSLANIEM FORMULARZA, nameValue', nameValue);
+    console.log('PRZED WYSLANIEM FORMULARZA, emailValue', emailValue);
+    console.log('PRZED WYSLANIEM FORMULARZA, topicValue', topicValue);
+    console.log('PRZED WYSLANIEM FORMULARZA, messageValue', messageValue);
+
+    fetch('https://submit-form.com/yxbIYTFL', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        name: nameValue,
+        email: emailValue,
+        topic: topicValue,
+        message: messageValue,
+      }),
+    })
+      .then(function (response) {
+        formLoader.classList.toggle('contact__loader-wrapper--active');
+        loaderInfoBox.classList.toggle('contact__info-box--active');
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
   // Slider installation and config

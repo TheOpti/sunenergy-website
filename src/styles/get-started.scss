@@ -1,20 +1,18 @@
 @import 'variables';
 
 .get-started {
-  margin: 24px auto 48px auto;
-
   &__timeline {
     display: flex;
     justify-content: center;
-    margin: 32px 0 64px;
+    margin-top: 32px;
 
     @media(max-width: $breakpoint-desktop) {
       flex-direction: column;
-      margin: 24px 0;
+      margin-top: 24px;
     }
 
     @media(max-width: $breakpoint-tablet) {
-      margin: 20px 0;
+      margin-top: 20px;
     }
   }
 
@@ -28,15 +26,15 @@
 
     @media(max-width: $breakpoint-desktop) {
       width: 100%;
-      margin: 24px 0;
+      margin-top: 24px;
     }
 
     @media(max-width: $breakpoint-tablet) {
-      margin: 20px 0;
+      margin-top: 20px;
     }
 
     @media(max-width: $breakpoint-mobile) {
-      margin: 16px 0;
+      margin-top: 16px;
     }
   }
 

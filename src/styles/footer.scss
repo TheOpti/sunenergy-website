@@ -2,34 +2,42 @@
 
 .footer {
   min-height: 100px;
-  color: white;
-  background-color: #AAD1D1;
-  display: flex;
-
-  @media(max-width: $breakpoint-tablet) {
-    min-height: 200px;
-  }
+  color: $color-gray;
+  background-color: $color-bg-gray;
 
   &__container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 24px 0;
 
     @media(max-width: $breakpoint-tablet) {
-      flex-direction: column;
-      justify-content: space-around;
+      flex-direction: column-reverse;
+      align-items: center;
     }
   }
 
-  &__contact-items-wrapper {
-    text-align: left;
+  &__logo {
+    height: 140px;
+    width: 250px;
+    background: url('../assets/images/logo.png') center center no-repeat;
+    background-size: contain;
+  }
+
+  &__company-data {
+    margin-left: 108px;
+    display: flex;
+    flex-direction: column;
 
     @media(max-width: $breakpoint-tablet) {
-      text-align: center;
+      margin-left: 0;
     }
   }
 
-  &__contact-item {
-    margin: 4px 0;
+  &__company-bold {
+    font-weight: 600;
+    padding-right: 8px;
+  }
+
+  &__company-data-row {
+    margin: 8px 0;
   }
 }

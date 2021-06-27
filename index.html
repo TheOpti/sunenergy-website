@@ -150,7 +150,7 @@
       <div class="headline ml12 color-gray">CO OFERUJEMY</div>
     </div>
     <h1 class="header color-slay">
-      Innowacyjne <b>rozwiazania dla każdego</b>
+      Innowacyjne <b>rozwiązania dla każdego</b>
     </h1>
     <p class="paragraph"><b>KryjanEnergy</b> oferuje rozwiązania dzieki którym <b>staniesz sie niezależny
       energetycznie</b> oraz efektywnie wykorzystasz energie elektryczną. Nasze rozwiazania pozwolą Ci <b>ułatwić
@@ -317,7 +317,7 @@
         <div class="separator"></div>
         <div class="headline ml12">WYBIERZ NAS</div>
       </div>
-      <h1 class="header">
+      <h1 class="header color-slay">
         DLACZEGO WARTO NAS WYBRAĆ
       </h1>
       <p class="paragraph">
@@ -411,6 +411,9 @@
   <div class="contact__content">
     <div class="contact__left">
       <div class="contact__form-wrapper">
+        <div class="contact__loader-wrapper">
+          <div class="contact__loader"></div>
+        </div>
         <div class="separator-line">
           <div class="separator"></div>
           <div class="headline ml12">KONTAKT</div>
@@ -423,48 +426,55 @@
         </p>
         <div class="contact__input-wrapper">
           <input
-            id="input-name"
+            id="name"
             class="contact__input"
             type="text"
             placeholder="Imię"
+            name="name"
           />
         </div>
         <div class="contact__input-wrapper">
           <input
-            id="input-email"
+            id="email"
             class="contact__input"
             type="email"
             placeholder="Email"
+            name="email"
           />
         </div>
         <div class="contact__input-wrapper">
           <input
-            id="input-subject"
+            id="subject"
             class="contact__input"
             type="text"
             placeholder="Tytuł"
+            name="subject"
           />
         </div>
         <div class="contact__input-wrapper">
             <textarea
-              id="input-message"
+              id="message"
               class="contact__input"
               type="text"
-              placeholder="Treść wiadomości"></textarea>
+              placeholder="Treść wiadomości"
+              name="message"
+            ></textarea>
         </div>
         <div class="contact__button-wrapper">
-          <button class="contact__button">
+          <button class="contact__button" id="submit-btn">
             WYŚLIJ
           </button>
+        </div>
+        <div class="contact__info-box">
+          Dziękuję za wiadomość! Odpowiem najszybciej jak to tylko możliwe.
         </div>
       </div>
     </div>
     <div class="contact__right">
       <div class="contact__call-wrapper">
         <div class="contact__call-headline">Jeśli chciałbyś z nami porozmawiać</div>
-        <div class="contact__call-title">Możesz do nas zadzwonić lub napisać</div>
+        <div class="contact__call-title">Możesz do nas zadzwonić</div>
         <div class="contact__call-logo"></div>
-        <div class="contact__call-title">biuro@kryjanenergy.pl</div>
         <div class="contact__call-number">513 05 04 05</div>
       </div>
     </div>
@@ -473,22 +483,19 @@
 
 <footer class="footer">
   <div class="footer__container container">
-    <div>KryjanEnergy Odnawialne Źródła Energii</div>
-    <div>
-      TheOpti 2021
-    </div>
-    <div class="footer__contact-items-wrapper">
-      <div class="footer__contact-item">
-        <i class="icon-mail"></i>
-        <span>supermail@google.com</span>
+    <div class="footer__logo"></div>
+    <div class="footer__company-data">
+      <div class="footer__company-data-row">Przemysław Kryjan</div>
+      <div class="footer__company-data-row">Konotopska 9/12</div>
+      <div class="footer__company-data-row">02-496 Warszawa</div>
+      <div class="footer__company-data-row">
+        <span class="footer__company-bold">NIP:</span>8351542096
       </div>
-      <div class="footer__contact-item">
-        <i class="icon-phone"></i>
-        <span>(+48) 555 555 555</span>
+      <div class="footer__company-data-row">
+        <span class="footer__company-bold">email:</span>biuro@kryjanenergy.pl
       </div>
-      <div class="footer__contact-item">
-        <i class="icon-skype"></i>
-        <span>Lorem ipsum dolor sit amet</span>
+      <div class="footer__company-data-row">
+        <span class="footer__company-bold">telefon:</span>+48 513 05 04 05
       </div>
     </div>
   </div>

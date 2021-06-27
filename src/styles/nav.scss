@@ -3,6 +3,10 @@
 .navigation {
   position: relative;
 
+  .container {
+    padding: 0 12px !important;
+  }
+
   &--sticky {
     background-color: white;
     z-index: 100;
