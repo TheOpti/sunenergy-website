@@ -14,9 +14,6 @@ module.exports = {
     filename: '[name].[hash:20].js',
     path: buildPath,
   },
-  node: {
-    fs: 'empty',
-  },
   module: {
     rules: [
       {
@@ -39,14 +36,12 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            // translates CSS into CommonJS
             loader: 'css-loader',
             options: {
               sourceMap: true,
             },
           },
           {
-            // compiles Sass to CSS
             loader: 'sass-loader',
             options: {
               outputStyle: 'expanded',
@@ -57,7 +52,6 @@ module.exports = {
         ],
       },
       {
-        // Load all images as base64 encoding if they are smaller than 8192 bytes
         test: /\.(png|jpg|jpeg|svg)$/,
         use: [
           {
@@ -74,7 +68,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
-      // Inject the js bundle at the end of the body of the given template
       inject: 'body',
     }),
     new CleanWebpackPlugin(buildPath),
