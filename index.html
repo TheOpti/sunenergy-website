@@ -14,9 +14,56 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
   <script src="https://kit.fontawesome.com/a4b32269cc.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  <script>
+    function initMap() {
+      const warsaw = { lat: 52.20722, lng: 20.86833 };
+      const chrusty = { lat: 51.72599, lng: 20.20336 };
+
+      const firstMap = new google.maps.Map(document.getElementById('map-first'), { zoom: 12, center: warsaw });
+      const secondMap = new google.maps.Map(document.getElementById('map-second'), { zoom: 12, center: chrusty });
+
+      const warsawInfowindow = new google.maps.InfoWindow({
+        content: `<div class="maps__marker">
+         <p>Konotopska 9/12</p>
+         <p>02-496 Warszawa</p>
+      </div>`,
+      });
+
+      const chrustyInfowindow = new google.maps.InfoWindow({
+        content: `<div class="maps__marker">
+         <p>Chrusty 66A</p>
+         <p>96-200 Rawa Mazowiecka</p>
+      </div>`,
+      });
+
+      const warsawMarker = new google.maps.Marker({
+        position: warsaw,
+        map: firstMap,
+        icon: 'src/assets/images/map-marker.svg',
+      });
+
+      const chrustyMarker = new google.maps.Marker({
+        position: chrusty,
+        map: secondMap,
+        // icon: 'src/assets/images/map-marker.svg',
+      });
+
+      warsawInfowindow.open({
+        anchor: warsawMarker,
+        firstMap,
+        shouldFocus: false,
+      });
+
+      chrustyInfowindow.open({
+        anchor: chrustyMarker,
+        secondMap,
+        shouldFocus: false,
+      })
+    }
+  </script>
 </head>
 <body>
-<nav class="navigation" id="nav-bar">
+<nav class="navigation" id="navbar">
   <div class="container">
     <div class="navigation__first-row">
       <div class="navigation__logo"></div>
@@ -50,7 +97,7 @@
   </div>
 </nav>
 
-<nav class="navigation navigation--sticky navigation--theme-fixed" id="nav-bar-sticky">
+<nav class="navigation navigation--sticky navigation--theme-fixed" id="navbar-sticky">
   <div class="container">
     <div class="navigation__first-row">
       <div class="navigation__logo"></div>
@@ -503,6 +550,7 @@
 
 <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfG4OGRKPnEG3_Wk8lLuwqLpKN9QEmmfc&callback=initMap&libraries=&v=weekly"
-  async></script>
+  async
+></script>
 </body>
 </html>
