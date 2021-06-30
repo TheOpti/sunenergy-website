@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-cheap-module-source-map',
@@ -28,23 +29,15 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
+            options: {},
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
+            options: {},
           },
           {
             loader: 'sass-loader',
-            options: {
-              outputStyle: 'expanded',
-              sourceMap: true,
-              sourceMapContents: true,
-            },
+            options: {},
           },
         ],
       },
@@ -67,5 +60,11 @@ module.exports = {
       template: './index.html',
       inject: true,
     }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/images/map-marker.svg',
+        to: 'images/map-marker.svg',
+      },
+    ]),
   ],
 };

@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -24,7 +25,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-
         options: {
           presets: ['env'],
         },
@@ -37,17 +37,11 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
+            options: {},
           },
           {
             loader: 'sass-loader',
-            options: {
-              outputStyle: 'expanded',
-              sourceMap: true,
-              sourceMapContents: true,
-            },
+            options: {},
           },
         ],
       },
@@ -87,5 +81,11 @@ module.exports = {
       },
       canPrint: true,
     }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/images/map-marker.svg',
+        to: 'images/map-marker.svg',
+      },
+    ]),
   ],
 };

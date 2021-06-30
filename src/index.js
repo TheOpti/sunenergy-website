@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cover: true,
     arrows: true,
     height: 600,
-    autoplay: true,
+    // autoplay: true,
     breakpoints: {
       768: {
-        height: 400,
+        height: 340,
       },
       992: {
         height: 500,

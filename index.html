@@ -36,26 +36,22 @@
       </div>`,
       });
 
-      const warsawMarker = new google.maps.Marker({
-        position: warsaw,
-        map: firstMap,
-        icon: 'src/assets/images/map-marker.svg',
-      });
-
-      const chrustyMarker = new google.maps.Marker({
-        position: chrusty,
-        map: secondMap,
-        // icon: 'src/assets/images/map-marker.svg',
-      });
-
       warsawInfowindow.open({
-        anchor: warsawMarker,
+        anchor: new google.maps.Marker({
+          position: warsaw,
+          map: firstMap,
+          icon: 'images/map-marker.svg',
+        }),
         firstMap,
         shouldFocus: false,
       });
 
       chrustyInfowindow.open({
-        anchor: chrustyMarker,
+        anchor: new google.maps.Marker({
+          position: chrusty,
+          map: secondMap,
+          icon: 'images/map-marker.svg',
+        }),
         secondMap,
         shouldFocus: false,
       })
@@ -135,26 +131,31 @@
       <div class="splide__list">
         <div class="splide__slide">
           <div class="welcome__slide first">
-            <div class="welcome__slide-title">
-              Pomożemy Ci zmieniać świat na lepszy
+            <div class="container">
+              <div class="welcome__slide-title">
+                Pomożemy Ci zmieniać świat na lepszy
+              </div>
             </div>
           </div>
         </div>
         <div class="splide__slide">
           <div class="welcome__slide second">
-            <div class="welcome__slide-title">
-              Zadbaj o siebie oraz swoich bliskich
+            <div class="container">
+              <div class="welcome__slide-title">
+                Zadbaj o siebie oraz swoich bliskich
+              </div>
             </div>
           </div>
         </div>
         <div class="splide__slide">
           <div class="welcome__slide third">
-            <div class="welcome__slide-title">
-              Skorzystaj z dotacji
+            <div class="container">
+              <div class="welcome__slide-title">
+                Skorzystaj z dotacji
+              </div>
             </div>
           </div>
         </div>
-        </ul>
       </div>
     </div>
 </section>

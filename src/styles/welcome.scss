@@ -14,29 +14,68 @@
     height: 600px;
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: $breakpoint-desktop) {
       height: 500px;
     }
 
     @media (max-width: $breakpoint-tablet) {
-      height: 400px;
+      height: 340px;
+      align-items: flex-start;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+
+      @media (max-width: $breakpoint-tablet) {
+        align-items: flex-start !important;
+        justify-content: center;
+
+        .welcome__slide-title {
+          margin: 40px 0 0 0 !important;
+          text-align: center !important;
+        }
+      }
     }
 
     &.first {
       background: url('../assets/images/slide-1.jpg') center center no-repeat;
       background-size: cover;
+
+      .container {
+        align-items: center;
+      }
+
+      & .welcome__slide-title {
+        text-align: left;
+      }
     }
 
     &.second {
       background: url('../assets/images/slide-2.jpg') center center no-repeat;
       background-size: cover;
+
+      .container {
+        align-items: flex-end;
+      }
+
+      & .welcome__slide-title {
+        margin: 0 auto 50px auto;
+        transform: translateY(-100px);
+      }
     }
 
     &.third {
       background: url('../assets/images/slide-3.jpg') center center no-repeat;
       background-size: cover;
+
+      .container {
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
@@ -45,20 +84,27 @@
     text-align: center;
     color: white;
     font-weight: 600;
-    transition: all 0.3s;
-    padding-bottom: 36px;
-    padding-top: 20px;
-    width: 100%;
-    background-color: rgba($color-green, 0.6);
-    box-shadow: 0px -2px 6px 4px rgba($color-green, 0.6);
+    transition: all 0.5s;
+    text-shadow: 2px 3px #2b3152;
+    max-width: 650px;
+    opacity: 0;
+    transform: translateY(-250px);
+    height: fit-content;
 
     @media (max-width: $breakpoint-desktop) {
-      font-size: 36px;
+      font-size: 40px;
     }
 
     @media (max-width: $breakpoint-tablet) {
-      font-size: 40px;
-      margin-top: 48px;
+      font-size: 32px;
+      margin-top: 36px;
+    }
+  }
+
+  .splide__slide.is-active {
+    .welcome__slide-title {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
