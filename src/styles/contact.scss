@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .contact {
 
@@ -12,7 +13,7 @@
   }
 
   &__left {
-    background-color: #D7DEE3;
+    background-color: $color-bg-gray;
     background-size: cover;
     display: flex;
     justify-content: flex-end;
@@ -157,25 +158,10 @@
   }
 
   &__button {
-    background: white;
-    color: $color-lightgray;
-    transition: all 0.3s;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    height: 62px;
-    letter-spacing: 0.8px;
-    border-radius: 4px;
-    border: 1px solid $color-lightgray;
-    text-align: center;
+    @include button;
     padding: 20px 34px;
-    outline: none;
     width: 200px;
-
-    &:hover {
-      background: $color-lightgray;
-      color: white;
-    }
+    height: 62px;
 
     @media(max-width: $breakpoint-desktop) {
       width: 100%;
@@ -241,8 +227,10 @@
 
   &__call-number {
     color: $color-green;
-    font-size: 48px;
+    font-size: 52px;
     line-height: 110%;
+    font-weight: 600;
+    text-shadow: 0 0 15px #fff, 0 0 15px #fff, 0 0 15px #fff, 0 0 15px #fff;
 
     @media(max-width: $breakpoint-desktop) {
       font-size: 48px;

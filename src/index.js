@@ -2,6 +2,7 @@ require('normalize.css/normalize.css');
 require('./styles/index.scss');
 require('./styles/about-company.scss');
 require('./styles/choose-us.scss');
+require('./styles/cookie.scss');
 require('./styles/contact.scss');
 require('./styles/footer.scss');
 require('./styles/get-started.scss');
@@ -21,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const formLoader = document.querySelector('.contact__loader-wrapper');
   const submitFormBtn = document.querySelector('#submit-btn');
   const loaderInfoBox = document.querySelector('.contact__info-box');
+  const cookieSection = document.querySelector('#cookie-warning');
+  const cookieButton = document.querySelector('#cookie-btn');
 
   document.addEventListener('scroll', changeNavBar);
   navBar.addEventListener('click', handleNavbarClick);
@@ -30,6 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileMenuToggleBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('navigation__menu-mobile--hidden');
   });
+
+  const cookieAccepted = localStorage.getItem('cookie');
+
+  if (cookieAccepted === 'accepted') {
+    cookieSection.style.display = 'none';
+  } else {
+    cookieButton.addEventListener('click', () => {
+      localStorage.setItem('cookie', 'accepted');
+      cookieSection.style.display = 'none';
+    });
+  }
 
   changeNavBar();
 
